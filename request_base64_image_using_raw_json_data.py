@@ -50,7 +50,7 @@ if __name__ == '__main__':
 '''
 ## TEST API
 
-url = 'http://127.0.0.1:8082/index'
+url = 'http://127.0.0.1:8000/index'
 
 with open("myTestImage.png", "rb") as img_file:
     my_string = base64.b64encode(img_file.read())
