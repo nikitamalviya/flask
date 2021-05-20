@@ -1,4 +1,4 @@
-import sys, datetime, base64
+import os, sys, datetime, base64
 from flask import Flask, request, jsonify
 from PIL import Image
 from io import BytesIO
