@@ -36,12 +36,29 @@ if __name__ == '__main__':
 
 
 '''
+## API DETAILS 
 ## url : 127.0.0.1:8000/index
 ## method : "POST"
 ## request :
 {
-"imageBase64" : b"__image_in_base64__"
+"imageBase64" : "__image_in_base64__"
 }
 ## response :
 {"result": result , 'errorcode':"0" ,'errormessage':""}
+'''
+
+'''
+## TEST API
+
+url = 'http://127.0.0.1:8082/index'
+
+with open("myTestImage.png", "rb") as img_file:
+    my_string = base64.b64encode(img_file.read())
+
+my_string = my_string.decode('utf-8')
+my_img = {'imageBase64' : my_string}
+r = requests.post(url, data={"imageBase64": my_string})
+# convert server response into JSON format.
+print(r, r.json())
+
 '''
