@@ -3,6 +3,10 @@ from flask import Flask, request, jsonify
 from PIL import Image
 from io import BytesIO
 
+# to save uploaded images
+if not os.path.exists('processing'):
+    os.mkdir('processing')
+
 app = Flask(__name__)
 
 @app.route('/index', methods =['POST'])
@@ -39,10 +43,7 @@ if __name__ == '__main__':
 ## API DETAILS 
 ## url : 127.0.0.1:8000/index
 ## method : "POST"
-## request :
-{
-"imageBase64" : "__image_in_base64__"
-}
+## request : json containing base64 image, {"imageBase64" : "__image_in_base64__"}
 ## response :
 {"result": result , 'errorcode':"0" ,'errormessage':""}
 '''
