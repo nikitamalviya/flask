@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
 '''
 ## TEST API
-
+import requests
 url = 'http://127.0.0.1:8000/index'
 
 with open("myTestImage.png", "rb") as img_file:
